@@ -38,27 +38,31 @@ convertBtn.addEventListener("click", () => {
         convert(currency1, currency2, number); 
         setTimeout(() => {
             let number2 = parseFloat(result.value);
-            if(input.value != "") {
-            rateInfo.innerText = `${number} ${currency1} = ${number2.toFixed(2)} ${currency2}`
-            } else {
+            if(input.value == "") {
                 alert("Please enter a value.");
+            } else if(input.value <= 0){
+                alert("Please enter positive number !!")
+            } else {
+            rateInfo.innerText = `${number} ${currency1} = ${number2.toFixed(2)} ${currency2}`
             }
-        },1000);
-        
-    }else {
+        },1500);
+    }
+    else {
         alert("Choose Different Currencies !!");
     }
 });
 
 function convert(currency1, currency2, number)
 {
-    fetch(`https://currency-exchange.p.rapidapi.com/exchange?from=${currency1}&to=${currency2}&q=${number}`, options)
-	.then(response => response.json())
-	.then(response => {
-        let rv = response*number;
-        result.value = rv.toFixed(2);
-    })
-	.catch(err => console.error(err)); 
+    if(number > 0) {
+        fetch(`https://currency-exchange.p.rapidapi.com/exchange?from=${currency1}&to=${currency2}&q=${number}`, options)
+        .then(response => response.json())
+        .then(response => {
+            let rv = response*number;
+            result.value = rv.toFixed(2);
+        })
+        .catch(err => console.error(err));
+    } 
 }
 
 input.addEventListener("keypress", (event) => {
