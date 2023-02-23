@@ -1,0 +1,96 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #89C4E1, #FFFBF5);
+}
+
+.container{
+    width: 45%;
+    padding: 30px;
+    background-color: #E9F8F9;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 3px 3px 10px #041C32;
+}
+.container h1{
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.container p{
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-weight:225;
+}
+
+.boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-left, .box-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    margin-bottom: 10px;
+    width: 95%;
+    font-size: 55px;
+}
+
+input, select {
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    background: none;
+    text-align: center;
+    box-shadow: 0 0 10px #89C4E1;
+}
+
+select {
+    padding: 10px 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: center;
+}
+h2 {
+    align-self: flex-start;
+    margin: 10px 15px;
+}
+
+option {
+    color: black;
+}
+
+.convert {
+    align-self: flex-end;
+    margin: 5px;
+    padding: 5px 50px;
+    background-image: linear-gradient(177deg, rgba(104,147,255,1) 0%, rgba(70,203,108,0.9075960309317942) 87%);
+    font-size: 30px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+#rate_info {
+   font-size: 30px;
+   margin-top: 25px;
+   display: flex;
+   justify-content: center;
+}
